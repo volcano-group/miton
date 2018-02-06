@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+{{> head}}
+
+<body>
+
+<div id="wrapper">
+
+    {{> header}}
+
+
+    <!-- Slider
+    ================================================== -->
+    <div class="listing-slider mfp-gallery-container margin-bottom-0">
+        <a href="assets/images/single-listing-01.jpg" data-background-image="assets/images/single-listing-01.jpg" class="item mfp-gallery" title="Title 1"></a>
+        <a href="assets/images/single-listing-02.jpg" data-background-image="assets/images/single-listing-02.jpg" class="item mfp-gallery" title="Title 3"></a>
+        <a href="assets/images/single-listing-03.jpg" data-background-image="assets/images/single-listing-03.jpg" class="item mfp-gallery" title="Title 2"></a>
+        <a href="assets/images/single-listing-04.jpg" data-background-image="assets/images/single-listing-04.jpg" class="item mfp-gallery" title="Title 4"></a>
+    </div>
+
+
+    <!-- Content
+    ================================================== -->
+    <div class="container">
+        <div class="row sticky-wrapper">
+            <div class="col-lg-8 col-md-8 padding-right-30">
+
+                <!-- Titlebar -->
+                <div id="titlebar" class="listing-titlebar">
+                    <div class="listing-titlebar-title">
+                        <h2>{{ name }}</h2>
+                        <span>
+						<a href="#listing-location" class="listing-address">
+							<i class="fa fa-map-marker"></i>
+							{{ location }}
+						</a>
+					</span>
+
+                    </div>
+                </div>
+
+                <!-- Listing Nav -->
+                <div id="listing-nav" class="listing-nav-container">
+                    <ul class="listing-nav">
+                        <li><a href="#listing-overview" class="active">Overview</a></li>
+                        <li><a href="#listing-pricing-list">Pricing</a></li>
+                        <li><a href="#listing-location">Location</a></li>
+                    </ul>
+                </div>
+
+                <!-- Overview -->
+                <div id="listing-overview" class="listing-section">
+
+                    {{ description }}
+
+                    <!-- Amenities -->
+                    <h3 class="listing-desc-headline">Amenities</h3>
+                    <ul class="listing-features checkboxes margin-top-0">
+                        <li>Elevator in building</li>
+                        <li>Friendly workspace</li>
+                        <li>Instant Book</li>
+                        <li>Wireless Internet</li>
+                        <li>Free parking on premises</li>
+                        <li>Free parking on street</li>
+                    </ul>
+                </div>
+
+
+                <!-- Food Menu -->
+                <div id="listing-pricing-list" class="listing-section">
+                    <h3 class="listing-desc-headline margin-top-70 margin-bottom-30">Pricing</h3>
+
+                    <div class="show-more">
+                        <div class="pricing-list-container">
+
+                            <!-- Food List -->
+                            <h4>Camere</h4>
+
+                            <ul>
+                                {{{ rooms }}}
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Food Menu / End -->
+
+
+                <!-- Location -->
+                <div id="listing-location" class="listing-section">
+                    <h3 class="listing-desc-headline margin-top-60 margin-bottom-30">Location</h3>
+
+                    <div id="singleListingMap-container">
+                        <div id="singleListingMap" data-latitude="40.70437865245596" data-longitude="-73.98674011230469" data-map-icon="im im-icon-Hamburger"></div>
+                        <a href="#" id="streetView">Street View</a>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+
+
+            <!-- Sidebar
+            ================================================== -->
+            <div class="col-lg-4 col-md-4 margin-top-75 sticky">
+
+
+                <!-- Verified Badge -->
+                <div class="verified-badge with-tip" data-tip-content="Listing has been verified and belongs the business owner or manager.">
+                    <i class="sl sl-icon-check"></i> Verified Listing
+                </div>
+
+                <!-- Book Now -->
+                <div class="boxed-widget booking-widget margin-top-35">
+                    <h3><i class="fa fa-calendar-check-o "></i> Book a Room</h3>
+                    <div class="row with-forms  margin-top-0">
+
+                        <!-- Date Picker - docs: http://www.vasterad.com/docs/listeo/#!/date_picker -->
+                        <div class="col-lg-6 col-md-12">
+                            <input type="text" id="booking-date" data-lang="en" data-large-mode="true" data-large-default="true" data-min-year="2017" data-max-year="2020" data-disabled-days="08/17/2017,08/18/2017">
+                        </div>
+
+                        <!-- Time Picker - docs: http://www.vasterad.com/docs/listeo/#!/time_picker -->
+                        <div class="col-lg-6 col-md-12">
+                            <input type="text" id="booking-time" value="9:00 am">
+                        </div>
+
+                        <!-- Panel Dropdown -->
+                        <div class="col-lg-12">
+                            <div class="panel-dropdown">
+                                <a href="#">Guests <span class="qtyTotal" name="qtyTotal">1</span></a>
+                                <div class="panel-dropdown-content">
+
+                                    <!-- Quantity Buttons -->
+                                    <div class="qtyButtons">
+                                        <div class="qtyTitle">People</div>
+                                        <input type="text" name="qtyInput" value="1">
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Panel Dropdown / End -->
+
+                    </div>
+
+                    <!-- progress button animation handled via custom.js -->
+                    <a href="pages-booking.html" class="button book-now fullwidth margin-top-5">Book Now</a>
+                </div>
+                <!-- Book Now / End -->
+
+
+
+
+
+                <!-- Contact -->
+                <div class="boxed-widget margin-top-35">
+                    <div class="hosted-by-title">
+                        <h4><span>Hosted by</span> <a href="pages-user-profile.html">{{owner}}</a></h4>
+                        <a href="pages-user-profile.html" class="hosted-by-avatar"><img src="assets/images/dashboard-avatar.jpg" alt=""></a>
+                    </div>
+                    <ul class="listing-details-sidebar">
+                        <li><i class="sl sl-icon-phone"></i> (123) 123-456</li>
+
+                        <li><i class="fa fa-envelope-o"></i> <a href="#">{{owner-contact}}</a></li>
+                    </ul>
+
+                    <ul class="listing-details-sidebar social-profiles">
+                        <li><a href="#" class="facebook-profile"><i class="fa fa-facebook-square"></i> Facebook</a></li>
+                        <li><a href="#" class="twitter-profile"><i class="fa fa-twitter"></i> Twitter</a></li>
+                        <!-- <li><a href="#" class="gplus-profile"><i class="fa fa-google-plus"></i> Google Plus</a></li> -->
+                    </ul>
+
+                    <!-- Reply to review popup -->
+                    <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                        <div class="small-dialog-header">
+                            <h3>Send Message</h3>
+                        </div>
+                        <div class="message-reply margin-top-0">
+                            <textarea cols="40" rows="3" placeholder="Your message to Tom"></textarea>
+                            <button class="button">Send Message</button>
+                        </div>
+                    </div>
+
+                    <a href="#small-dialog" class="send-message-to-owner button popup-with-zoom-anim"><i class="sl sl-icon-envelope-open"></i> Send Message</a>
+                </div>
+                <!-- Contact / End-->
+
+
+                <!-- Share / Like -->
+                <div class="listing-share margin-top-40 margin-bottom-40 no-border">
+                    <button class="like-button"><span class="like-icon"></span> Bookmark this listing</button>
+                    <span>159 people bookmarked this place</span>
+
+                    <!-- Share Buttons -->
+                    <ul class="share-buttons margin-top-40 margin-bottom-0">
+                        <li><a class="fb-share" href="#"><i class="fa fa-facebook"></i> Share</a></li>
+                        <li><a class="twitter-share" href="#"><i class="fa fa-twitter"></i> Tweet</a></li>
+                        <li><a class="gplus-share" href="#"><i class="fa fa-google-plus"></i> Share</a></li>
+                        <!-- <li><a class="pinterest-share" href="#"><i class="fa fa-pinterest-p"></i> Pin</a></li> -->
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+
+            </div>
+            <!-- Sidebar / End -->
+
+        </div>
+    </div>
+
+
+    {{> footer}}
+
+
+    <!-- Back To Top Button -->
+    <div id="backtotop"><a href="#"></a></div>
+
+
+</div>
+<!-- Wrapper / End -->
+
+
+{{> scripts}}
+
+
+
+
+</body>
+</html>

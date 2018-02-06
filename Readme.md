@@ -1,9 +1,16 @@
+# miton
 
-# static-site
+yiton site in metlasmith
 
-This example uses Metalsmith to make a static site. To test it out yourself just run:
 
     $ yarn build
+
+To enable offline caching
+
+    $ yarn cache
+then launch chrome with
+
+    $ chrome  --ignore-certificate-errors
 
 To use https use:
 

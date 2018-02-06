@@ -1,20 +1,26 @@
-var Metalsmith  = require('metalsmith');
-var markdown    = require('metalsmith-markdown');
-var layouts     = require('metalsmith-layouts');
-var permalinks  = require('metalsmith-permalinks')
+let Metalsmith  = require('metalsmith');
+let markdown    = require('metalsmith-markdown');
+let layouts     = require('metalsmith-layouts');
+let permalinks  = require('metalsmith-permalinks')
+let rewrite = require('metalsmith-rewrite')
+
 
 Metalsmith(__dirname)
   .metadata({
-    title: "My Static Site & Blog",
-    description: "It's about saying »Hello« to the World.",
-    generator: "Metalsmith",
-    url: "http://www.metalsmith.io/"
+    title: "Yiton new site",
+    description: "The new yiton site.",
+    url: "http://www.yiton.it/"
   })
   .source('./src')
   .destination('./build')
-  .clean(false)
+  .clean(true)
   .use(markdown())
   .use(permalinks())
+    .use(rewrite([{
+        // flatten folder
+        pattern: 'apartments/**/*.html',
+        filename: '{path.dir}.html',
+    }]))
 
     .use(layouts({
         engine: 'handlebars',

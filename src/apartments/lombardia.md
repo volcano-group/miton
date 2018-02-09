@@ -5,6 +5,7 @@ layout: apartment.html
 image: lombardia.jpg
 description: Bell'appartamento.
 owner:
+prezzoimmobile: 
 rooms: <li>
           <h5>Doppia</h5>
           <p>Vista parco, con bagno privato</p>

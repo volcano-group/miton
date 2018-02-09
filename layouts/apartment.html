@@ -11,8 +11,8 @@
     <!-- Slider
     ================================================== -->
     <div class="listing-slider mfp-gallery-container margin-bottom-0">
-        <a href="assets/images/single-listing-01.jpg" data-background-image="assets/images/single-listing-01.jpg" class="item mfp-gallery" title="Title 1"></a>
-        <a href="assets/images/single-listing-02.jpg" data-background-image="assets/images/single-listing-02.jpg" class="item mfp-gallery" title="Title 3"></a>
+        <a href="assets/pictures/{{name}}/photo1.jpg" data-background-image="assets/pictures/{{name}}/photo1.jpg" class="item mfp-gallery" title="{{name}}1"></a>
+        <a href="assets/pictures/{{name}}/photo2.jpg" data-background-image="assets/pictures/{{name}}/photo2.jpg" class="item mfp-gallery" title="{{name}}2"></a>
         <a href="assets/images/single-listing-03.jpg" data-background-image="assets/images/single-listing-03.jpg" class="item mfp-gallery" title="Title 2"></a>
         <a href="assets/images/single-listing-04.jpg" data-background-image="assets/images/single-listing-04.jpg" class="item mfp-gallery" title="Title 4"></a>
     </div>
@@ -71,14 +71,18 @@
 
                     <div class="show-more">
                         <div class="pricing-list-container">
-
-                            <!-- Food List -->
+                        {{#if prezzoimmobile}} 
+                        <ul>
+                            {{ prezzoimmobile }}
+                        </ul>
+                        {{/if}}
+                        {{#if rooms}} 
                             <h4>Camere</h4>
 
                             <ul>
-                                {{{ rooms }}}
+                                {{ rooms }}
                             </ul>
-
+                        {{/if}}
 
                         </div>
                     </div>
